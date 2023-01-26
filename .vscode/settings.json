@@ -1,0 +1,9 @@
+{
+  "eslint.validate": [
+    "javascript"
+  ],
+  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
