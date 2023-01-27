@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
-const { _get, _empty, toQueryString } = require('../helpers/utilities');
-const errors = require('../data/errors');
+// const fetch = require('node-fetch');
+const { _get, _empty, toQueryString } = require("../helpers/utilities");
+const errors = require("../data/errors");
 
 module.exports = {
   /**
@@ -13,7 +13,7 @@ module.exports = {
    * @param qs
    * @returns {Promise<{msg: *, error: *}|*>}
    */
-  async makeRequest({ method = 'get', url, uri, body = {}, qs = {} }) {
+  async makeRequest({ method = "get", url, uri, body = {}, qs = {} }) {
     const { at } = this;
 
     if (!at) {
@@ -30,15 +30,15 @@ module.exports = {
       method,
       headers: {
         Authorization: `Bearer ${this.at}`,
-        'Content-Type': 'application/json',
-      },
+        "Content-Type": "application/json"
+      }
     };
 
     if (!_empty(body)) {
       payload.body = JSON.stringify(body);
     }
 
-    const queryString = !_empty(qs) ? toQueryString(qs) : '';
+    const queryString = !_empty(qs) ? toQueryString(qs) : "";
     const requestUrl = `${apiUrl}${uri}${queryString}`;
 
     const request = await fetch(requestUrl, payload);
@@ -49,6 +49,6 @@ module.exports = {
 
     const response = await request.json();
 
-    return response
-  },
+    return response;
+  }
 };
