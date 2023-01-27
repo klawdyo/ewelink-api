@@ -1,4 +1,5 @@
-const crypto = require("crypto");
+// const crypto = require("node:crypto");
+const nodeCrypto = require("node:crypto");
 const CryptoJS = require("crypto-js");
 const random = require("random");
 
@@ -6,7 +7,7 @@ const DEVICE_TYPE_UUID = require("../data/devices-type-uuid.json");
 const DEVICE_CHANNEL_LENGTH = require("../data/devices-channel-length.json");
 
 const makeAuthorizationSign = (APP_SECRET, body) =>
-  crypto
+  nodeCrypto
     .createHmac("sha256", APP_SECRET)
     .update(JSON.stringify(body))
     .digest("base64");
