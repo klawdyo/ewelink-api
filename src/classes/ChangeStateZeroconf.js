@@ -4,8 +4,6 @@ const WebSocket = require("./WebSocket");
 const zeroConfUpdatePayload = require("../payloads/zeroConfUpdatePayload");
 const { _get } = require("../helpers/utilities");
 
-const fetch = require("node-fetch");
-
 class ChangeStateZeroconf extends WebSocket {
   static async set({ url, device, params, switches, state }) {
     const selfApikey = device.apikey;

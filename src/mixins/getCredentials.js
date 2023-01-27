@@ -5,8 +5,6 @@ const credentialsPayload = require("../payloads/credentialsPayload");
 const { makeAuthorizationSign } = require("../helpers/ewelink");
 const errors = require("../data/errors");
 
-const fetch = require("node-fetch");
-
 module.exports = {
   /**
    * Returns user credentials information

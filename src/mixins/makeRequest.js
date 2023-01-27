@@ -2,8 +2,6 @@
 const { _get, _empty, toQueryString } = require("../helpers/utilities");
 const errors = require("../data/errors");
 
-const fetch = require("node-fetch");
-
 module.exports = {
   /**
    * Helper to make api requests
