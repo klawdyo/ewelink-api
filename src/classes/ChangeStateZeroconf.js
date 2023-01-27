@@ -16,10 +16,6 @@ class ChangeStateZeroconf extends WebSocket {
 
     const request = await fetch(`${url}/${endpoint}`, {
       method: "post",
-      mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-      },
       body: JSON.stringify(body)
     });
 
