@@ -1,16 +1,23 @@
 // const crypto = require("node:crypto");
-const nodeCrypto = require("node:crypto");
+// const nodeCrypto = require("node:crypto");
 const CryptoJS = require("crypto-js");
 const random = require("random");
 
 const DEVICE_TYPE_UUID = require("../data/devices-type-uuid.json");
 const DEVICE_CHANNEL_LENGTH = require("../data/devices-channel-length.json");
 
-const makeAuthorizationSign = (APP_SECRET, body) =>
-  nodeCrypto
-    .createHmac("sha256", APP_SECRET)
-    .update(JSON.stringify(body))
-    .digest("base64");
+// const makeAuthorizationSign = (APP_SECRET, body) =>
+//   nodeCrypto
+//     .createHmac("sha256", APP_SECRET)
+//     .update(JSON.stringify(body))
+//     .digest("base64");
+
+const makeAuthorizationSign = (secret, body) => {
+  var hmac = CryptoJS.HmacSHA256(JSON.stringify(body), secret);
+  var hash = hmac.toString(CryptoJS.enc.Base64);
+
+  return hash;
+};
 
 const getDeviceTypeByUiid = uiid => DEVICE_TYPE_UUID[uiid] || "";
 
