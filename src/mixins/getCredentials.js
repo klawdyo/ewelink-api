@@ -5,6 +5,11 @@ const credentialsPayload = require("../payloads/credentialsPayload");
 const { makeAuthorizationSign } = require("../helpers/ewelink");
 const errors = require("../data/errors");
 
+const got = require("got");
+const { createFetch } = require("got-fetch");
+const myGot = got.extend({});
+const fetch = createFetch(myGot);
+
 module.exports = {
   /**
    * Returns user credentials information
@@ -24,6 +29,7 @@ module.exports = {
     const request = await fetch(`${this.getApiUrl()}/user/login`, {
       method: "post",
       headers: {
+        referer: "https://us-api.coolkit.cc:8080",
         Authorization: `Sign ${makeAuthorizationSign(APP_SECRET, body)}`
       },
       body: JSON.stringify(body)

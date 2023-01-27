@@ -2,6 +2,11 @@
 const { _get, _empty, toQueryString } = require("../helpers/utilities");
 const errors = require("../data/errors");
 
+const got = require("got");
+const { createFetch } = require("got-fetch");
+const myGot = got.extend({});
+const fetch = createFetch(myGot);
+
 module.exports = {
   /**
    * Helper to make api requests
@@ -29,6 +34,7 @@ module.exports = {
     const payload = {
       method,
       headers: {
+        referer: "https://us-api.coolkit.cc:8080",
         Authorization: `Bearer ${this.at}`,
         "Content-Type": "application/json"
       }

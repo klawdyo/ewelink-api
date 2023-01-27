@@ -1,6 +1,6 @@
 {
   "name": "ewelink-api",
-  "version": "3.1.1-j",
+  "version": "3.1.1-k",
   "description": "eWeLink API for Node.js",
   "author": "Martín M.",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "crypto": "^1.0.1",
     "crypto-js": "^4.0.0",
     "delay": "^4.4.0",
+    "got-fetch": "4.0.0",
     "node-fetch": "^2.6.8",
     "random": "^4.1.0",
     "websocket": "^1.0.32",
