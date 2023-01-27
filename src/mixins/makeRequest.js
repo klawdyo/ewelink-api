@@ -28,6 +28,7 @@ module.exports = {
 
     const payload = {
       method,
+      mode: "no-cors",
       headers: {
         Authorization: `Bearer ${this.at}`,
         "Content-Type": "application/json"

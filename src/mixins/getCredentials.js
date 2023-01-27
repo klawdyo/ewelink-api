@@ -23,6 +23,7 @@ module.exports = {
 
     const request = await fetch(`${this.getApiUrl()}/user/login`, {
       method: "post",
+      mode: "no-cors",
       headers: {
         Authorization: `Sign ${makeAuthorizationSign(APP_SECRET, body)}`
       },
