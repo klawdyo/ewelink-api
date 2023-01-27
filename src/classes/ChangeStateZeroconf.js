@@ -4,10 +4,7 @@ const WebSocket = require("./WebSocket");
 const zeroConfUpdatePayload = require("../payloads/zeroConfUpdatePayload");
 const { _get } = require("../helpers/utilities");
 
-const got = require("got");
-const { createFetch } = require("got-fetch");
-const myGot = got.extend({});
-const fetch = createFetch(myGot);
+const fetch = require("node-fetch");
 
 class ChangeStateZeroconf extends WebSocket {
   static async set({ url, device, params, switches, state }) {
@@ -21,6 +18,10 @@ class ChangeStateZeroconf extends WebSocket {
 
     const request = await fetch(`${url}/${endpoint}`, {
       method: "post",
+      headers: {
+        referer: "https://us-api.coolkit.cc:8080",
+        origin: "https://us-api.coolkit.cc:8080"
+      },
       body: JSON.stringify(body)
     });
 
