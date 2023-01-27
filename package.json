@@ -13,11 +13,9 @@
   "scripts": {},
   "dependencies": {
     "arpping": "github:skydiver/arpping",
-    "crypto": "^1.0.1",
     "crypto-js": "^4.0.0",
     "delay": "^4.4.0",
-    "got-fetch": "4.0.0",
-    "node-fetch": "^2.6.8",
+    "node-fetch": "^3.3.0",
     "random": "^4.1.0",
     "websocket": "^1.0.32",
     "websocket-as-promised": "^1.0.1"
