@@ -1,4 +1,4 @@
-const crypto = require("node:crypto");
+const crypto = require("crypto");
 const CryptoJS = require("crypto-js");
 const random = require("random");
 

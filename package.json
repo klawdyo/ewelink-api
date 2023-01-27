@@ -1,6 +1,6 @@
 {
   "name": "ewelink-api",
-  "version": "3.1.1-e",
+  "version": "3.1.1-f",
   "description": "eWeLink API for Node.js",
   "author": "Martín M.",
   "license": "MIT",
@@ -13,6 +13,7 @@
   "scripts": {},
   "dependencies": {
     "arpping": "github:skydiver/arpping",
+    "crypto": "^1.0.1",
     "crypto-js": "^4.0.0",
     "delay": "^4.4.0",
     "node-fetch": "^2.6.8",
