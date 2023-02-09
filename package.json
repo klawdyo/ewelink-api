@@ -1,6 +1,6 @@
 {
   "name": "ewelink-api",
-  "version": "3.1.1-o",
+  "version": "3.1.1-q",
   "description": "eWeLink API for Node.js",
   "author": "Martín M.",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "arpping": "github:skydiver/arpping",
     "crypto-js": "^4.0.0",
     "delay": "^4.4.0",
-    "node-fetch": "^3.3.0",
+    "node-fetch": "^2.6.9",
     "websocket": "^1.0.32",
     "websocket-as-promised": "^1.0.1"
   },
