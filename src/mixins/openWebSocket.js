@@ -1,7 +1,7 @@
-const W3CWebSocket = require('websocket').w3cwebsocket;
-const WebSocketAsPromised = require('websocket-as-promised');
+const W3CWebSocket = require("websocket").w3cwebsocket;
+const WebSocketAsPromised = require("websocket-as-promised");
 
-const wssLoginPayload = require('../payloads/wssLoginPayload');
+const wssLoginPayload = require("../payloads/wssLoginPayload");
 
 module.exports = {
   /**
@@ -16,11 +16,11 @@ module.exports = {
     const payloadLogin = wssLoginPayload({
       at: this.at,
       apiKey: this.apiKey,
-      appid: this.APP_ID,
+      appid: this.APP_ID
     });
 
     const wsp = new WebSocketAsPromised(this.getApiWebSocket(), {
-      createWebSocket: wss => new W3CWebSocket(wss),
+      createWebSocket: wss => new W3CWebSocket(wss)
     });
 
     wsp.onMessage.addListener(message => {
@@ -36,9 +36,11 @@ module.exports = {
     await wsp.send(payloadLogin);
 
     setInterval(async () => {
-      await wsp.send('ping');
+      try {
+        await wsp.send("ping");
+      } catch (error) {}
     }, heartbeat);
 
     return wsp;
-  },
+  }
 };
