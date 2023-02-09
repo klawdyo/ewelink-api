@@ -20,9 +20,15 @@ const toQueryString = object =>
     .map(key => `${key}=${object[key].toString()}`)
     .join('&')}`;
 
+function getRange(ini, end){
+  return parseInt(Math.random() * end + ini, 10)
+}
+
+
 module.exports = {
   nonce,
   timestamp,
+  getRange,
   _get,
   _empty,
   toQueryString,

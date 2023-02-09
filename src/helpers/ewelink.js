@@ -1,7 +1,10 @@
 // const crypto = require("node:crypto");
 // const nodeCrypto = require("node:crypto");
 const CryptoJS = require("crypto-js");
-const random = require("random");
+// const random = require("random");
+
+const {getRange} = require('../helpers/utilities.js')
+
 
 const DEVICE_TYPE_UUID = require("../data/devices-type-uuid.json");
 const DEVICE_CHANNEL_LENGTH = require("../data/devices-channel-length.json");
@@ -32,7 +35,8 @@ const getDeviceChannelCount = deviceUUID => {
 const create16Uiid = () => {
   let result = "";
   for (let i = 0; i < 16; i += 1) {
-    result += random.int(0, 9);
+    result += getRange(0, 9);
+    // result += random.int(0, 9);
   }
   return result;
 };
