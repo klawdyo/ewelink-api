@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from "node-fetch";
 const { _get, _empty, toQueryString } = require("../helpers/utilities");
 const errors = require("../data/errors");
 

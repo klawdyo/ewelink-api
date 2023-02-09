@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from "node-fetch";
 
 const { _get } = require("../helpers/utilities");
 const credentialsPayload = require("../payloads/credentialsPayload");
