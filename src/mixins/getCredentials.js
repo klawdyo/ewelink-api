@@ -1,4 +1,4 @@
-// const fetch = require('node-fetch');
+const fetch = require('node-fetch');
 
 const { _get } = require("../helpers/utilities");
 const credentialsPayload = require("../payloads/credentialsPayload");
